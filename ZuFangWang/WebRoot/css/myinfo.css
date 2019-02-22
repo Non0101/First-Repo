@@ -1,0 +1,80 @@
+* {
+	padding: 0;
+	margin: 0
+}
+
+img {
+	border: 0
+}
+
+.bd {
+	width: 750px;
+	height: 480px;
+	border: solid 1px #FFFFFF;
+	background-color: #9D9D9D
+}
+
+body {
+	font-family: "Î¢ÈíÑÅºÚ";
+	padding: 0 8px 0 10px;
+	width: 750px;
+	height:480px;
+	margin: auto;
+	font-size: 12px;
+	background: #BEBEBE;
+}
+
+.myinfo_top {
+	height: 100px;
+	width: 750px;
+	margin-left: 2.5px;
+	border: solid 1px;
+	float: left;
+}
+
+.rt {
+	width: 750px;
+	height: 100px;
+}
+
+.h1 {
+	font-family: "Î¢ÈíÑÅºÚ";
+	color: black;
+}
+
+.my_message {
+	background-color: red;
+	width: 380px;
+	height: 250px;
+	margin-top: 60px;
+	margin-left: 120px;
+	border: double 5px #272727;
+	float: left;
+}
+
+.myinfo_table {
+	background-color: #F0F0F0;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: double 5px #272727;
+	width: 380px;
+	height: 250px;
+}
+
+.myinfo_updatebutton {
+	margin-left: 150px;
+	width: 100px;
+	height: 30px;
+	background-color: #00EC00;
+}
+
+.footerdiv {
+	width: 750px;
+	height: 40px;
+	border: solid 1px;
+	background: #BEBEBE;
+}
+
+.footerdiv.footer {
+	font-family: "Î¢ÈíÑÅºÚ" font-size : 15;
+}

@@ -1,0 +1,89 @@
+/*背景基本样式  */
+.bd {
+	width: 985px;
+	height: 900px;
+	border: solid 1px #FFFFFF;
+	background-color: #9D9D9D;
+}
+body {
+	font-family: "微软雅黑";
+	padding: 0 8px 0 10px;
+	width: 985px;
+	margin: auto;
+	font-size: 12px;
+	background: #BEBEBE;
+}
+.h1{font-family:"微软雅黑";color:black;}
+.footerdiv {
+	width: 985px;
+	height: 80px;
+	border: solid 1px;
+	background: #BEBEBE;
+}
+.footerdiv.footer {
+	font-family: "黑体" ；font-size : 15;
+}
+/*背景基本样式  */
+/*banner样式及banner中图片样式  */
+.myinfo_top {
+	height: 100px;
+	width: 980px;
+	margin-left: 2.5px;
+	border: solid 1px;
+	float: left;
+}
+.rt {
+	width: 980px;
+	height: 100px;
+}
+
+.li1 {
+	list-style-type: none; /* 去掉li前的点 */
+	float: left;
+	padding-top:2px;
+}
+
+.li1_a {
+	display: block; /*将a变成块状*/
+	width: 99px; /*设置块的宽度*/
+	height: 45px; /*设置块的长度*/
+	font-family: 微软雅黑;
+	line-height: 30px; /*设置字体在块中的高度*/
+	background-color: #5B5B5B;
+	color: #fff;
+	text-align: center; /*字体居中*/
+	text-decoration: none; /*去掉下划线*/
+	font-size: 6px;
+	margin-left:0px;
+}
+.up{
+	border:solid 1px black;
+	float:left;
+	width:300px;
+    height:45px;
+    margin-top:0px;
+    margin-left:5px;
+}
+.daohang{
+	padding:0px;
+	margin-top:0px;
+}
+a:hover {
+	background-color: #7B7B7B;
+}
+.middlebox{
+	height:500px;
+	width:780px;
+	margin-top:80px;
+	border:solid 1px black;
+	margin-left:60px;
+}
+.footerdiv {
+	width: 985px;
+	height: 80px;
+	border: solid 1px;
+	background: #BEBEBE;
+}
+.footerdiv.footer {
+	font-family: "黑体" ；font-size : 15;
+}

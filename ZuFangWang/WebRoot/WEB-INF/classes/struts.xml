@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!--DMI user增删改查 -->
+	<package name="util" extends="struts-default" namespace="/bb">
+		<action name="yzm" class="com.zufangwang.action.validationCode">
+		</action>
+	</package>
+	<package name="usermanage" extends="struts-default" namespace="/aa">
+		<action name="user_*" class="com.zufangwang.action.UserAction"
+			method="{1}">
+			<result name="loginok_zuke">/main/zukemain.jsp</result>
+			<result name="loginok_fangdong">/main/fangdongmain.jsp</result>
+			<result name="login_admin">/admin/adminmain.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="checkregisterok">/user/login_form.jsp</result>
+			<result name="logout">/user/login_form.jsp</result>
+			<result name="updateok">/common/myinfo.jsp</result>
+			<!-- <result name="loginok_zuke" type="chain">querynewsAction</result> -->
+		</action>
+	</package>
+	<!--DMI house增删改查 -->
+	<package name="housemanage" extends="struts-default" namespace="/dd">
+		<action name="house_*" class="com.zufangwang.action.HouseAction"
+			method="{1}">
+			<result name="publishok" type="redirect">/house/publishok.jsp</result>
+			<result name="changeok" type="redirect">/house/updatehouse.jsp</result>
+			<result name="xiangqingok">/house/houseinfo.jsp</result>
+			<result name="queryMyHousesok">/house/myfz.jsp</result>
+			<result name="cancelok">/house/myfz.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+<!--DMI order增删改查 -->
+	<package name="ordermanage" extends="struts-default" namespace="/oo">
+		<action name="order_*" class="com.zufangwang.action.OrderAction"
+			method="{1}">
+			<result name="insertorderok">/order/order_info.jsp</result>
+			<result name="fdorders">/order/fdorders.jsp</result>
+			<result name="zkorders">/order/zkorders.jsp</result>
+			<result name="error">/error.jsp</result> 
+		</action>
+        <action name="admin_*" class="com.zufangwang.action.AdminAction" method="{1}">
+         	<result name="queryallorder">/admin/admin_orders.jsp</result>
+			<result name="deleteoneorder">/admin/admin_orders.jsp</result>
+			<result name="queryalluser">/admin/admin_users.jsp</result>
+			<result name="deleteoneuser">/admin/admin_users.jsp</result>
+        </action>
+	</package>
+<!--DMI 类别查询 -->
+	 <package name="categorymanage" extends="struts-default" namespace="/cc"> 
+		<action name="category_*" class="com.zufangwang.action.CategoryAction" method="{1}">
+		<result name="queryByleibieok">/house/fenlei.jsp</result>
+		<result name="queryByPriceok">/house/fenlei.jsp</result> 
+		<result name="queryByRoomnumberok">/house/fenlei.jsp</result> 
+		<result name="error">/error.jsp</result> </action> 
+		</package> 
+		
+		<!-- <package name="addressmanage" extends="struts-default" namespace="/address"> 
+		<interceptors> 
+		<interceptor name="auth" class="interceptor.MethodInterceptor"></interceptor> 
+		<interceptor-stack name="authStack"> 
+		<interceptor-ref name="defaultStack" /> 
+		<interceptor-ref name="auth" /> </interceptor-stack> 
+		</interceptors> 
+		<default-interceptor-ref name="authStack"></default-interceptor-ref> 
+		<global-results> 
+		<result name="noUser" type="redirect">/user/login_form.jsp</result>
+		 </global-results> 
+		 <action name="address_*" class="action.AddressAction" method="{1}">
+		  <result name="addressOk">/order/address_form.jsp</result> 
+		</action>  -->
+</struts>

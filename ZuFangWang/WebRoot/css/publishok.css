@@ -1,0 +1,42 @@
+/*背景基本样式  */
+.bd {
+	width: 985px;
+	height: 1000px;
+	border: solid 1px #FFFFFF;
+	background-color: #9D9D9D;
+}
+body {
+	font-family: "微软雅黑";
+	padding: 0 8px 0 10px;
+	width: 985px;
+	margin: auto;
+	font-size: 12px;
+	background: #BEBEBE;
+}
+.houseinfo_top {
+	height: 100px;
+	width: 980px;
+	margin-left: 2.5px;
+	border: solid 1px;
+	float: left;
+}
+.rt {
+	width: 980px;
+	height: 100px;
+}
+.footerdiv {
+	width: 985px;
+	height: 80px;
+	border: solid 1px;
+	background: #BEBEBE;
+}
+.footerdiv.footer {
+	font-family: "黑体" ；font-size : 15;
+}
+.tishi{
+	width:380px;
+	height:150px;
+	font-size:25px;
+	margin-top:102px;
+	margin-left:290px;
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "../mybatis-3-mapper.dtd" >
+<mapper namespace="com.zufangwang.dao.CategoryDao"> 
+		<!--通过类别查询某一类房屋  -->
+	<resultMap type="House" id="categoryResultMap1">
+		<id property="house_id" column="house_id"/>
+		 <result property="house_name" column="house_name"/>
+		 <result property="house_type" column="house_type"/>
+		 <result property="room_number" column="room_number"/>
+		 <result property="house_price" column="house_price"/>
+    <collection property="photo" ofType="com.zufangwang.entity.Photo">
+      <result column="photo_path" property="photo_path"/>
+    </collection>
+	</resultMap>
+
+	<select id="selectByCategory" resultMap="categoryResultMap1">
+select h.house_id,
+       h.house_name,
+       h.house_type,
+       h.room_number,
+       h.house_price,
+		p.photo_path 
+		from house h 
+			left join photo p 
+			on h.house_id=p.house_id
+				where p.photo_id in 
+					(select min(photo_id) from photo group by house_id) 
+				and h.category_id=#{category_id}
+	</select>
+	<!--通过价格区间分类搜索房屋  -->
+<resultMap id="priceResultMap2" type="House">
+	<id property="house_id" column="house_id"/>
+		 <result property="house_name" column="house_name"/>
+		 <result property="house_type" column="house_type"/>
+		 <result property="room_number" column="room_number"/>
+		 <result property="house_price" column="house_price"/>
+    <collection property="photo" ofType="com.zufangwang.entity.Photo">
+      <result column="photo_path" property="photo_path"/>
+    </collection>
+	</resultMap> 
+	
+	<select id="selectByPrice" resultMap="priceResultMap2">
+	select h.house_id,
+	  h.house_name,
+       h.house_type,
+       h.room_number,
+       h.house_price,
+		p.photo_path 
+		from house h 
+			left join photo p 
+			on h.house_id=p.house_id
+				where p.photo_id in 
+					(select min(photo_id) from photo group by house_id) 
+				and h.house_price between #{startPrice} and #{endPrice}
+	</select>
+	<!--通过 房间数分类查询房屋 -->
+  <resultMap id="roomnumberResultMap3" type="House">
+	<id property="house_id" column="house_id"/>
+		 <result property="house_name" column="house_name"/>
+		 <result property="room_number" column="room_number"/>
+		 <result property="house_type" column="house_type"/>
+		 <result property="house_price" column="house_price"/>
+    <collection property="photo" ofType="com.zufangwang.entity.Photo">
+      <result column="photo_path" property="photo_path"/>
+    </collection>
+	</resultMap> 
+	<select id="selectByroomnumber" resultMap="roomnumberResultMap3">
+	select h.house_id,
+	  h.house_name,
+       h.house_type,
+       h.room_number,
+       h.house_price,
+		p.photo_path 
+		from house h 
+			left join photo p 
+			on h.house_id=p.house_id
+				where p.photo_id in 
+					(select min(photo_id) from photo group by house_id) 
+				and h.room_number =#{roomnumber}
+	</select>
+	<!--房间数大于5的房屋 -->
+<resultMap id="roomnumberResultMap4" type="House">
+	<id property="house_id" column="house_id"/>
+		 <result property="house_name" column="house_name"/>
+		 <result property="room_number" column="room_number"/>
+		 <result property="house_type" column="house_type"/>
+		 <result property="house_price" column="house_price"/>
+    <collection property="photo" ofType="com.zufangwang.entity.Photo">
+      <result column="photo_path" property="photo_path"/>
+    </collection>
+	</resultMap> 
+	<select id="selectByroomnumber2" resultMap="roomnumberResultMap4">
+	select h.house_id,
+	  h.house_name,
+       h.house_type,
+       h.room_number,
+       h.house_price,
+		p.photo_path 
+		from house h 
+			left join photo p 
+			on h.house_id=p.house_id
+				where p.photo_id in 
+					(select min(photo_id) from photo group by house_id) 
+				and h.room_number &gt;#{roomnumber}
+	</select>
+</mapper>
